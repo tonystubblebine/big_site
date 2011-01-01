@@ -1,0 +1,33 @@
+<h1>Listing big_site_sites</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Content manager</th>
+    <th>Name</th>
+    <th>Sub domain</th>
+    <th></th>
+    <th>Deleted</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @big_site_sites.each do |big_site_site| %>
+  <tr>
+    <td><%= big_site_site.user_id %></td>
+    <td><%= big_site_site.content_manager_id %></td>
+    <td><%= big_site_site.name %></td>
+    <td><%= big_site_site.sub_domain %></td>
+    <td><%= big_site_site. %></td>
+    <td><%= big_site_site.deleted %></td>
+    <td><%= link_to 'Show', big_site_site %></td>
+    <td><%= link_to 'Edit', edit_big_site_site_path(big_site_site) %></td>
+    <td><%= link_to 'Destroy', big_site_site, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Site', new_big_site_site_path %>

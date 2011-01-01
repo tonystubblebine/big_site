@@ -1,0 +1,41 @@
+<%= form_for(@big_site_site) do |f| %>
+  <% if @big_site_site.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@big_site_site.errors.count, "error") %> prohibited this big_site_site from being saved:</h2>
+
+      <ul>
+      <% @big_site_site.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :content_manager_id %><br />
+    <%= f.text_field :content_manager_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :sub_domain %><br />
+    <%= f.text_field :sub_domain %>
+  </div>
+  <div class="field">
+    <%= f.label : %><br />
+    <%= f.text_field : %>
+  </div>
+  <div class="field">
+    <%= f.label :deleted %><br />
+    <%= f.check_box :deleted %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

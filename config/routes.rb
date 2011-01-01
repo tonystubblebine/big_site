@@ -1,5 +1,7 @@
 Rails::Application.routes.draw do
 
+  namespace :big_site do resources :sites end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

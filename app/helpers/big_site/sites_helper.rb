@@ -1,0 +1,2 @@
+module BigSite::SitesHelper
+end

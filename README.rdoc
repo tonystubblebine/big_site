@@ -1,0 +1,6 @@
+Nothing to see here. In development, "site" engine for saas services .
+
+
+setup
+
+rake big_site:generate:migration

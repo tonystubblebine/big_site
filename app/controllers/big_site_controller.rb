@@ -1,0 +1,2 @@
+class BigSite< ApplicationController
+end

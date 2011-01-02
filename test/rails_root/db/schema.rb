@@ -10,7 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101128230245) do
+ActiveRecord::Schema.define(:version => 20110102003858) do
+
+  create_table "big_site_sites", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "content_manager_id"
+    t.string   "name"
+    t.string   "sub_domain"
+    t.string   "domain"
+    t.boolean  "deleted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "cms_files", :force => true do |t|
     t.string   "file_file_name"

@@ -1,2 +1,2 @@
-class BigSite< ApplicationController
+class BigSiteController < ApplicationController
 end

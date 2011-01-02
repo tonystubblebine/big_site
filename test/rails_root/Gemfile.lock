@@ -1,7 +1,8 @@
 PATH
   remote: ../..
   specs:
-    big_cms (0.0.1)
+    big_site (0.0.1)
+      acts_as_versioned
       jeweler
       rails (> 3.0.0)
 
@@ -126,8 +127,8 @@ PLATFORMS
 DEPENDENCIES
   acts_as_versioned
   big_auth!
-  big_cms!
   big_library!
+  big_site!
   rails (= 3.0.3)
   ruby-debug
   sqlite3-ruby

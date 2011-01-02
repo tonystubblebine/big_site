@@ -1,7 +1,6 @@
 module BigSite
   require 'big_site/service_config'
   
-  # Twitter & Facebook app configs
   mattr_accessor :service_configs
   @@service_configs = {}
   
@@ -9,8 +8,8 @@ module BigSite
     yield self
   end
   
-  def self.layouts(opts)
-    @@service_configs[:layouts] = BigSite::ServiceConfig.new(opts)
+  def self.service_domains(domains)
+    @@service_configs[:service_domains] = BigSite::ServiceConfig.new(domains)
   end
 
   require 'big_site/engine' if defined?(Rails) && Rails::VERSION::MAJOR >= 3

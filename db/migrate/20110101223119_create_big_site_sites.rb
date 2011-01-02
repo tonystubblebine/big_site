@@ -1,6 +1,6 @@
 class CreateSites < ActiveRecord::Migration
   def self.up
-    create_table :big_site_sites do |t|
+    create_table :sites do |t|
       t.integer :user_id
       t.integer :content_manager_id
       t.string :name
@@ -13,6 +13,6 @@ class CreateSites < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :big_site_sites
+    drop_table :sites
   end
 end

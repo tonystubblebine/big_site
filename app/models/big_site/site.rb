@@ -1,5 +1,8 @@
 module BigSite
 class Site < ActiveRecord::Base
+  has_one :content_manager
+  belongs_to :user
+ 
   validates_uniqueness_of :sub_domain, :case_sensitive => false
   validates_uniqueness_of :domain, :case_sensitive => false
 

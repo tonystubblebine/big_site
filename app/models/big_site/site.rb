@@ -1,6 +1,6 @@
 module BigSite
 class Site < ActiveRecord::Base
-  has_one :content_manager
+  belongs_to :content_manager, :class_name => "BigCms::ContentManager"
   belongs_to :user
  
   validates_uniqueness_of :sub_domain, :case_sensitive => false

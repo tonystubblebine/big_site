@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{big_site}
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tony Stubblebine"]
-  s.date = %q{2011-02-04}
+  s.date = %q{2011-02-19}
   s.email = %q{tony+bigsite@tonystubblebine.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -53,7 +53,6 @@ Gem::Specification.new do |s|
   s.test_files = [
     "test/rails_root/app/controllers/application_controller.rb",
     "test/rails_root/app/helpers/application_helper.rb",
-    "test/rails_root/app/models/user.rb",
     "test/rails_root/config/application.rb",
     "test/rails_root/config/boot.rb",
     "test/rails_root/config/environment.rb",
@@ -61,25 +60,18 @@ Gem::Specification.new do |s|
     "test/rails_root/config/environments/production.rb",
     "test/rails_root/config/environments/test.rb",
     "test/rails_root/config/initializers/backtrace_silencers.rb",
-    "test/rails_root/config/initializers/big_auth.rb",
     "test/rails_root/config/initializers/big_site.rb",
     "test/rails_root/config/initializers/inflections.rb",
     "test/rails_root/config/initializers/mime_types.rb",
     "test/rails_root/config/initializers/secret_token.rb",
     "test/rails_root/config/initializers/session_store.rb",
     "test/rails_root/config/routes.rb",
-    "test/rails_root/db/migrate/20101125054346_create_content_managers.rb",
-    "test/rails_root/db/migrate/20101125054348_create_pages.rb",
-    "test/rails_root/db/migrate/20101125054350_create_navigations.rb",
-    "test/rails_root/db/migrate/20101125054352_create_components.rb",
-    "test/rails_root/db/migrate/20101125195736_add_versioning_to_pages.rb",
-    "test/rails_root/db/migrate/20101125195738_add_versioning_to_components.rb",
-    "test/rails_root/db/migrate/20101128230245_create_big_auth_tables.rb",
-    "test/rails_root/db/migrate/20110102003858_create_sites.rb",
+    "test/rails_root/db/migrate/20110219051023_create_sites.rb",
     "test/rails_root/db/schema.rb",
     "test/rails_root/db/seeds.rb",
+    "test/rails_root/test/performance/browsing_test.rb",
     "test/rails_root/test/test_helper.rb",
-    "test/test_helper.rb"
+    "test/rails_root/test/unit/site_test.rb"
   ]
 
   if s.respond_to? :specification_version then

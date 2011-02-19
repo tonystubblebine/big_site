@@ -10,18 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110102003858) do
-
-  create_table "big_site_sites", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "content_manager_id"
-    t.string   "name"
-    t.string   "sub_domain"
-    t.string   "domain"
-    t.boolean  "deleted"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(:version => 20110219051023) do
 
   create_table "cms_files", :force => true do |t|
     t.string   "file_file_name"
@@ -64,6 +53,17 @@ ActiveRecord::Schema.define(:version => 20110102003858) do
   create_table "content_managers", :force => true do |t|
     t.boolean  "private_pages", :default => false
     t.boolean  "user_editable", :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "layouts", :force => true do |t|
+    t.integer  "content_manager_id"
+    t.string   "name"
+    t.text     "head"
+    t.text     "pre_content"
+    t.text     "post_content"
+    t.string   "format"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -125,6 +125,17 @@ ActiveRecord::Schema.define(:version => 20110102003858) do
 
   add_index "pages", ["content_manager_id"], :name => "index_pages_on_content_manager_id"
   add_index "pages", ["navigation_id"], :name => "index_pages_on_navigation_id"
+
+  create_table "sites", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "content_manager_id"
+    t.string   "name"
+    t.string   "sub_domain"
+    t.string   "domain"
+    t.boolean  "deleted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "remember_token"

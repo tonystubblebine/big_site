@@ -16,12 +16,17 @@ class Site < ActiveRecord::Base
     tld = md[3]
     root = domain + "." + tld
 
+    if BigSite::service_configs and BigSite::service_configs[:service_domains] and BigSite::service_configs[:service_domains].kind_of?(Array)
+      service_domains = BigSite::service_configs[:service_domains]
+    else
+      service_domains = []
+    end
+
     # Request for subdomain.#{service_domain}.com should find the site with that
     # subdomain. 
     if subdomain \
-       and !BigSite::service_configs.empty? \
-       and !BigSite::service_configs.include?(root) \
-       and site = Site.find(:first, :conditions => ["LOWER(sub_domain) = ?", subdomain])
+       and service_domains.include?(root) \
+       and site = BigSite::Site.find(:first, :conditions => ["LOWER(sub_domain) = ?", subdomain])
       site
     # Can we find an exact match on the request host?
     elsif site = Site.find(:first, :conditions => ["LOWER(domain) = ?", host])
@@ -29,7 +34,7 @@ class Site < ActiveRecord::Base
     # If the request is for domain.com but the custom_domain entered as
     # www.domain.com. If the request is for randomsubdomain.domain.com then we
     # want to return www.domain.com or domain.com only.
-    elsif !BigSite::service_configs.include?(root) and ((site = Site.find(:first, :conditions => ["LOWER(domain) = ?", "www." + root])) or (site = Site.find(:first, :conditions => ["LOWER(domain) = ?", root])))
+    elsif !service_domains.include?(root) and ((site = Site.find(:first, :conditions => ["LOWER(domain) = ?", "www." + root])) or (site = Site.find(:first, :conditions => ["LOWER(domain) = ?", root])))
       site
     else
       nil

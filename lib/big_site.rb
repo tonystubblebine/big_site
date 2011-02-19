@@ -9,7 +9,7 @@ module BigSite
   end
   
   def self.service_domains(domains)
-    @@service_configs[:service_domains] = BigSite::ServiceConfig.new(domains)
+    @@service_configs[:service_domains] = domains
   end
 
   require 'big_site/engine' if defined?(Rails) && Rails::VERSION::MAJOR >= 3

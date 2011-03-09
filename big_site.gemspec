@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{big_site}
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tony Stubblebine"]
-  s.date = %q{2011-03-07}
+  s.date = %q{2011-03-09}
   s.email = %q{tony+bigsite@tonystubblebine.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -42,7 +42,7 @@ Gem::Specification.new do |s|
     "lib/big_site/railties/tasks.rake",
     "lib/big_site/service_config.rb",
     "lib/generators/big_site/big_site_generator.rb",
-    "lib/generators/big_site/templates/add_user_id_to_sites_migration.rb",
+    "lib/generators/big_site/templates/add_site_id_to_users_migration.rb",
     "lib/generators/big_site/templates/assets/stylesheets/big_site_admin.css",
     "lib/generators/big_site/templates/big_site_initializer.rb",
     "lib/generators/big_site/templates/create_sites_migration.rb"

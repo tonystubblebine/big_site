@@ -1,3 +1,8 @@
+PATH
+  remote: ../big_library
+  specs:
+    big_library (0.0.2)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -76,8 +81,6 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_versioned
+  big_library!
   jeweler
   rails (> 3.0.0)
-
-METADATA
-  version: 1.0.6

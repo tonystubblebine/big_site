@@ -1,10 +1,15 @@
 module BigSite
 class Site < ActiveRecord::Base
+  unloadable
   belongs_to :content_manager, :class_name => "BigCms::ContentManager"
   belongs_to :user
- 
+  has_many :users 
   validates_uniqueness_of :sub_domain, :case_sensitive => false
   validates_uniqueness_of :domain, :case_sensitive => false
+
+  def self.foo 
+    "frog"
+  end
 
   def self.find_by_host_name(host)
     host.downcase!
@@ -34,7 +39,7 @@ class Site < ActiveRecord::Base
     # If the request is for domain.com but the custom_domain entered as
     # www.domain.com. If the request is for randomsubdomain.domain.com then we
     # want to return www.domain.com or domain.com only.
-    elsif !service_domains.include?(root) and ((site = Site.find(:first, :conditions => ["LOWER(domain) = ?", "www." + root])) or (site = Site.find(:first, :conditions => ["LOWER(domain) = ?", root])))
+    elsif (site = Site.find(:first, :conditions => ["LOWER(domain) = ?", "www." + root])) or (site = Site.find(:first, :conditions => ["LOWER(domain) = ?", root]))
       site
     else
       nil

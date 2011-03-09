@@ -1,8 +1,10 @@
 require 'rails/generators'
 require 'rails/generators/migration'
+require 'big_library/generators'
 
 class BigSiteGenerator < Rails::Generators::Base
   include Rails::Generators::Migration
+  include BigLibrary::Generators
 
   def self.source_root
     File.join(File.dirname(__FILE__), 'templates')
@@ -17,18 +19,13 @@ class BigSiteGenerator < Rails::Generators::Base
       "%.3d" % (current_migration_number(dirname) + 1)
     end
   end
-  
-  def create_migration_file
-    %w{create_sites}.each do |migration|
-      begin
-        migration_template "#{migration}_migration.rb", "db/migrate/#{migration}.rb"
-        sleep(2) # cheap hack to make sure migration numbers end up being different
-      rescue
-        puts $!
-      end
+
+  def create_migration_files
+    %w{create_sites add_site_id_to_users}.each do |migration|
+      create_migration_file(migration)
     end
   end
-
+ 
   def copy_assets
     copy_file 'assets/stylesheets/big_site_admin.css',  'public/stylesheets/big_site_admin.css'
   end

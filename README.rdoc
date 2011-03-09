@@ -1,4 +1,6 @@
-Nothing to see here. In development, "site" engine for saas services .
+Nothing to see here. In development. 
+
+Provide multi-tenancy for SaaS sites.
 
 
 setup

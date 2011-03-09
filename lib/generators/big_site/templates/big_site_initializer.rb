@@ -1,4 +1,7 @@
 BigSite.setup do |config|
+  # Uncomment these if you're using with big_auth or with any sort of users table
+  # BigSite::Site.class_eval('belongs_to :content_manager, :class_name => "BigCms::ContentManager"')
+  # BigSite::Site.class_eval('has_many :users')
 
   # Example of how to run a multi-tenant site
   # BigSite::Site.class_eval('belongs_to :content_manager, :class_name => "BigCms::ContentManager"')
